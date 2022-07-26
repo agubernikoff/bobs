@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Intro from "./Intro";
+import Home from "./Home";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
+  setTimeout(() => {
+    navigate("/home");
+  }, 20000);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route exact path="/" element={<Intro />} />
+        <Route exact path="/home" element={<Home />} />
+      </Routes>
     </div>
   );
 }
