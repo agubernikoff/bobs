@@ -1,17 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import BurgerOfTheDay from "./BurgerOfTheDay";
+import List from "./List";
 
 function Home() {
+  const [category, setCategory] = useState("");
+  function closeList() {
+    setCategory("");
+  }
   return (
     <div className="home">
       <BurgerOfTheDay />
-      <div>
-        <h1 className="options">CHARACTERS</h1>
-        <h1 className="options">EPISODES</h1>
-        <h1 className="options">STORES NEXT DOOR</h1>
-        <h1 className="options">PEST CONTROL TRUCKS</h1>
-        <h1 className="options">ALEXIS' FAVORITES</h1>
-      </div>
+      {category ? (
+        <List category={category} closeList={closeList} />
+      ) : (
+        <div className="options-container">
+          <h1
+            className="options"
+            onClick={(e) => {
+              setCategory(e.target.innerText);
+            }}
+          >
+            CHARACTERS
+          </h1>
+          <h1
+            className="options"
+            onClick={(e) => {
+              setCategory(e.target.innerText);
+            }}
+          >
+            EPISODES
+          </h1>
+          <h1
+            className="options"
+            onClick={(e) => {
+              setCategory(e.target.innerText);
+            }}
+          >
+            STORES NEXT DOOR
+          </h1>
+          <h1
+            className="options"
+            onClick={(e) => {
+              setCategory(e.target.innerText);
+            }}
+          >
+            PEST CONTROL TRUCKS
+          </h1>
+          <h1
+            className="options"
+            onClick={(e) => {
+              setCategory(e.target.innerText);
+            }}
+          >
+            ALEXIS' FAVORITES
+          </h1>
+        </div>
+      )}
     </div>
   );
 }

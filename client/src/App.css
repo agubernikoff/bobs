@@ -17,9 +17,13 @@
   transform: scale(200%);
 }
 .home {
-  background-image: url(./assets/bobBack.jpeg);
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100vh;
-  background-position: center;
+  width: 100vw;
+  background-image: url(./assets/bobBack.jpeg);
+  background-position: 0 right 0;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -64,12 +68,41 @@
   src: url(./assets/fonts/rudiment.medium.ttf);
 }
 #burgerOfTheDay {
-  position: absolute;
+  position: relative;
   /* border: 1px solid white; */
-  right: 40vw;
-  top: 21vh;
-  width: 120px;
+  left: 51.25vw;
+  top: 27vh;
+  width: 9vw;
   text-align: center;
   font-family: chalk;
   color: white;
+}
+#burgerOfTheDay p {
+  font: size 1vw;
+}
+.options-container {
+  position: relative;
+  left: 65vw;
+  bottom: 2vh;
+  /* border: 2px solid white; */
+  width: fit-content;
+}
+.options {
+  font-family: bobs;
+  color: rgb(190, 0, 0);
+  cursor: pointer;
+  width: fit-content;
+  font-size: 2.5vw;
+}
+.options:hover {
+  text-decoration: underline;
+  background-color: white;
+}
+.list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
 }
