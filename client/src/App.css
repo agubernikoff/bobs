@@ -63,3 +63,13 @@
   font-family: chalk;
   src: url(./assets/fonts/rudiment.medium.ttf);
 }
+#burgerOfTheDay {
+  position: absolute;
+  /* border: 1px solid white; */
+  right: 40vw;
+  top: 21vh;
+  width: 120px;
+  text-align: center;
+  font-family: chalk;
+  color: white;
+}
