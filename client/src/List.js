@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Card from "./Card";
 
 function List({ category, closeList }) {
   const [url, setURL] = useState("");
   const [listItems, setListItems] = useState([]);
+  const [clicked, setClicked] = useState([]);
 
   useEffect(() => {
     if (category === "CHARACTERS" || category === "EPISODES") {
@@ -20,12 +22,24 @@ function List({ category, closeList }) {
   console.log(listItems);
 
   const mappedItems = listItems.map((item) => (
-    <li>{item.name ? item.name : "N/A - click me anyway!"}</li>
+    <li
+      key={item.name + item.id.toString()}
+      onClick={() => setClicked([...clicked, item])}
+    >
+      {item.name ? item.name : "N/A - click me anyway!"}
+    </li>
+  ));
+
+  const mappedCards = clicked.map((item) => (
+    <Card item={item} key={item.name + item.id.toString()} />
   ));
   return (
     <div className="list">
-      <button onClick={closeList}>X</button>
       <ul>{mappedItems}</ul>
+      <div className="card-container">{mappedCards}</div>
+      <button onClick={closeList} className="xbtn">
+        X
+      </button>
     </div>
   );
 }

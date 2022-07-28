@@ -105,6 +105,8 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: row;
 }
 .list ul {
   background-color: black;
@@ -117,4 +119,40 @@
   font-size: 2vw;
   color: white;
   cursor: pointer;
+}
+.xbtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+}
+.card-container {
+  width: 80vw;
+  height: 90vh;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+}
+.card {
+  width: 45%;
+  background: white;
+  text-align: center;
+  height: fit-content;
+  margin: auto;
+  border: 5px solid rgb(190, 0, 0);
+}
+.card img {
+  width: 25%;
+}
+.card h1 {
+  background: rgb(190, 0, 0);
+  color: white;
+}
+.card button {
+  float: right;
+  background: white;
+  color: rgb(190, 0, 0);
+  border-color: rgb(190, 0, 0);
 }
