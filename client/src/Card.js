@@ -1,10 +1,10 @@
 import React from "react";
 
-function Card({ item }) {
+function Card({ item, closeCard }) {
   console.log(item);
   return (
     <div className="card">
-      <button>X</button>
+      <button onClick={() => closeCard(item.id)}>X</button>
       <h1>{item.name}</h1>
       {item.image ? <img src={item.image} alt={item.name} /> : null}
       {item.firstEpisode ? (

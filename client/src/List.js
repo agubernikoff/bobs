@@ -21,18 +21,33 @@ function List({ category, closeList }) {
   }, [url]);
   console.log(listItems);
 
+  const cardContainer = document.querySelector(".card-container");
+
   const mappedItems = listItems.map((item) => (
     <li
       key={item.name + item.id.toString()}
-      onClick={() => setClicked([...clicked, item])}
+      onClick={() => {
+        if (!clicked.includes(item)) setClicked([...clicked, item]);
+        cardContainer.scrollTop = cardContainer.scrollHeight;
+      }}
     >
       {item.name ? item.name : "N/A - click me anyway!"}
     </li>
   ));
 
+  function closeCard(itemId) {
+    const filtered = clicked.filter((item) => item.id !== itemId);
+    setClicked([...filtered]);
+  }
+
   const mappedCards = clicked.map((item) => (
-    <Card item={item} key={item.name + item.id.toString()} />
+    <Card
+      item={item}
+      key={item.name + item.id.toString()}
+      closeCard={closeCard}
+    />
   ));
+
   return (
     <div className="list">
       <ul>{mappedItems}</ul>
