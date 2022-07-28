@@ -83,7 +83,7 @@
 .options-container {
   position: relative;
   left: 65vw;
-  bottom: 2vh;
+  /* bottom: 1vh; */
   /* border: 2px solid white; */
   width: fit-content;
 }
@@ -105,4 +105,16 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.5);
+}
+.list ul {
+  background-color: black;
+  width: 20vw;
+  height: 90vh;
+  overflow: scroll;
+}
+.list li {
+  font-family: bobs;
+  font-size: 2vw;
+  color: white;
+  cursor: pointer;
 }
