@@ -6,7 +6,13 @@ function Card({ item, closeCard }) {
     <div className="card">
       <button onClick={() => closeCard(item.id)}>X</button>
       <h1>{item.name}</h1>
-      {item.image ? <img src={item.image} alt={item.name} /> : null}
+      {item.image ? (
+        <img
+          src={item.image}
+          alt={item.name}
+          className={item.voicedBy ? "charCardImg" : "nonCharCardImg"}
+        />
+      ) : null}
       {item.firstEpisode ? (
         <p>
           <strong>First Appearance: </strong>

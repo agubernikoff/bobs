@@ -78,7 +78,7 @@
   color: white;
 }
 #burgerOfTheDay p {
-  font: size 1vw;
+  font-size: 1rem;
 }
 .options-container {
   position: relative;
@@ -144,8 +144,11 @@
   margin-bottom: 2%;
   border: 5px solid rgb(190, 0, 0);
 }
-.card img {
+.charCardImg {
   width: 25%;
+}
+.nonCharCardImg {
+  width: 60%;
 }
 .card h1 {
   background: rgb(190, 0, 0);
