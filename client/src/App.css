@@ -139,8 +139,9 @@
   width: 45%;
   background: white;
   text-align: center;
-  height: fit-content;
+  max-height: 75vh;
   margin: auto;
+  margin-bottom: 2%;
   border: 5px solid rgb(190, 0, 0);
 }
 .card img {
